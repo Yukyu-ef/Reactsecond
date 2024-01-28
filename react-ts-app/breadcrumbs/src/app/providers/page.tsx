@@ -1,13 +1,11 @@
+"use client";
 import PageHeader from "@/component/pageHeader";
 import { Button, Grid } from "@mui/material";
 import { FC } from "react";
-import { useNavigate } from "react-router-dom";
 
 const Providers: FC = () => {
-  const navigate = useNavigate();
-
   const handleClick = () => {
-    navigate("/");
+    window.location.href = "/";
   };
 
   return (
