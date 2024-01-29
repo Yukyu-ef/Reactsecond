@@ -1,4 +1,5 @@
 "use client";
+import { ProviderBreadCrumbsConst } from "@/asset/const/breadCrumbsConst";
 import withPageHeader from "@/component/pageHeader/withPageHeader";
 import { Button, Grid } from "@mui/material";
 import { FC } from "react";
@@ -18,6 +19,7 @@ const Providers: FC = () => {
   );
 };
 
-export default withPageHeader("LINE設定", [
-  { title: "プロバイダ設定", url: "/providers" },
-])(Providers);
+export default withPageHeader(
+  ProviderBreadCrumbsConst.title,
+  ProviderBreadCrumbsConst.breadcrumbs
+)(Providers);

@@ -2,6 +2,7 @@
 import { Button, Grid } from "@mui/material";
 import { FC } from "react";
 import withPageHeader from "../component/pageHeader/withPageHeader";
+import { HomeBreadCrumbsConst } from "@/asset/const/breadCrumbsConst";
 
 const Home: FC = () => {
   const handleLineButtonClick = () => {
@@ -25,4 +26,7 @@ const Home: FC = () => {
   );
 };
 
-export default withPageHeader("Home画面", [{ title: "Home", url: "/" }])(Home);
+export default withPageHeader(
+  HomeBreadCrumbsConst.title,
+  HomeBreadCrumbsConst.breadcrumbs
+)(Home);

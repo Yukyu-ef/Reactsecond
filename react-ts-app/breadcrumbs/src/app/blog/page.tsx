@@ -1,4 +1,5 @@
 "use client";
+import { BlogBreadCrumbsConst } from "@/asset/const/breadCrumbsConst";
 import withPageHeader from "@/component/pageHeader/withPageHeader";
 import { Button, Grid } from "@mui/material";
 import { FC } from "react";
@@ -18,6 +19,7 @@ const Blog: FC = () => {
   );
 };
 
-export default withPageHeader("Blog画面", [{ title: "Blog", url: "/blog" }])(
-  Blog
-);
+export default withPageHeader(
+  BlogBreadCrumbsConst.title,
+  BlogBreadCrumbsConst.breadcrumbs
+)(Blog);
