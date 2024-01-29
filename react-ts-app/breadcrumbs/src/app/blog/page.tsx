@@ -1,5 +1,5 @@
 "use client";
-import PageHeader from "@/component/pageHeader";
+import withPageHeader from "@/component/pageHeader/withPageHeader";
 import { Button, Grid } from "@mui/material";
 import { FC } from "react";
 
@@ -10,10 +10,6 @@ const Blog: FC = () => {
 
   return (
     <Grid>
-      <PageHeader
-        title={"Blog画面"}
-        breadcrumbs={[{ title: "Blog", url: "/blog" }]}
-      />
       Blog
       <Button variant="contained" onClick={handleClick}>
         トップページに戻る
@@ -22,4 +18,6 @@ const Blog: FC = () => {
   );
 };
 
-export default Blog;
+export default withPageHeader("Blog画面", [{ title: "Blog", url: "/blog" }])(
+  Blog
+);

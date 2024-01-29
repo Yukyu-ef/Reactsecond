@@ -2,7 +2,7 @@ import { BreadCrumbsTypes } from "@/types/breadCrumbsTypes";
 import { Breadcrumbs, Typography } from "@mui/material";
 import Link from "next/link";
 import { FC } from "react";
-import { uuid } from "uuidv4";
+import { v4 as uuidv4 } from "uuid";
 
 interface Props {
   title: string;
@@ -15,7 +15,7 @@ const PageHeader: FC<Props> = ({ title, breadcrumbs }) => {
       <Typography>{title}</Typography>
       {breadcrumbs.map((breadcrumb) => (
         <Link
-          key={uuid()}
+          key={uuidv4()}
           color="inherit"
           title={breadcrumb.title}
           href={breadcrumb.url}

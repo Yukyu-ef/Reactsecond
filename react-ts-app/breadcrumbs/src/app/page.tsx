@@ -1,7 +1,7 @@
 "use client";
 import { Button, Grid } from "@mui/material";
 import { FC } from "react";
-import PageHeader from "../component/pageHeader";
+import withPageHeader from "../component/pageHeader/withPageHeader";
 
 const Home: FC = () => {
   const handleLineButtonClick = () => {
@@ -14,10 +14,6 @@ const Home: FC = () => {
 
   return (
     <Grid>
-      <PageHeader
-        title={"Home画面"}
-        breadcrumbs={[{ title: "Home", url: "/" }]}
-      />
       Home画面
       <Button variant="contained" onClick={handleLineButtonClick}>
         Line設定
@@ -29,4 +25,4 @@ const Home: FC = () => {
   );
 };
 
-export default Home;
+export default withPageHeader("Home画面", [{ title: "Home", url: "/" }])(Home);
